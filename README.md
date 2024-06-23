@@ -34,7 +34,8 @@ peft_config = LoraConfig(
 TrainOutput(global_step=80, training_loss=0.6876016139984131, metrics={'train_runtime': 14.2093, 'train_samples_per_second': 90.082, 'train_steps_per_second': 5.63, 'train_loss': 0.6876016139984131, 'epoch': 10.0})
 
 ### v3 Config
-set use_rslora=True on v1 config
+set use_rslora=True on v1 config  
+(sets the adapter scaling factor to lora_alpha/math.sqrt(r), since it was proven to work better)
 ```python=
 peft_config = LoraConfig(
     lora_alpha=16,
